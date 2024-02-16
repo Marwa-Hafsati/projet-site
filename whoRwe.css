@@ -1,0 +1,143 @@
+/* importation (font, icones, ect..) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* fin place import*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+   background-color: #ffffff ;
+}
+
+/* Equipe changement */
+header {
+    background-color: #d9b08c;
+}
+
+
+nav.NewPage {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.LogoSection img {
+    width: 170px;
+    height: auto;
+}
+.background-container {
+    background: linear-gradient(90deg, #ffffff, #ffffff);
+    padding: 20px;
+    color: black;
+}
+li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+
+.Rubriques {
+    background-color: transparent;
+}
+
+.Team {
+   text-align: center;
+   font-size: 4rem;
+   color: #2c3531;
+   padding: 1rem;
+   margin: 2rem 0;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.kellyane {
+   width: 90%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align : center;
+    margin:  20px auto;
+}
+
+.kellyane p {
+  font-size: 18px;
+    color: #2c3531 ;
+    margin-bottom: 20px;
+}
+
+.marwa {
+    width: 90%;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align : center;
+    margin:  20px auto;
+
+}
+
+.marwa p {
+    font-size: 18px;
+    color: #2c3531 ;
+    margin-bottom: 20px;
+}
+
+
+/* CV changements */
+
+.CV {
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    padding: 1rem;
+    background-color: #D3D3D3;
+}
+
+.CV img {
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    padding: 1rem;
+  
+}
+
+@media print {
+    .CV img {
+    width: 100%;
+    height: auto;
+}
+
+
+@media (max-width:480px) {
+    body {
+        font-size: 14px;
+    }
+
+    
+
+

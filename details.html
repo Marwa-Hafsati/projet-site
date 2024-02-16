@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        img :not(.insta-img) {
+            width: 20%;
+            height: auto;
+        }
+	footer{
+	    margin-top: 20px;
+	}
+
+        .add-to-cart {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+	.Icons a.social-icon {
+    width: 10px; /* ou la taille souhaitée */
+    height: auto;
+    margin-right: 10px; /* ajustez selon votre mise en page */
+}
+	.description-right {
+    flex-grow: 1; /* La description à droite occupera tout l'espace disponible */
+}
+
+    </style>
+
+    <title>Details de la Photo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+        <header>
+            <img src="IMGS/logo.jpg" alt="logo" class="logo-img">
+
+            <section class="Haut">
+                <h1> Chipfind</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Rechercher...">
+                    <button type="button">Rechercher</button>
+                </div>
+            </section>
+
+            <section class="Rubriques">
+                <nav class="NewPage">
+                    <ul>
+                        <li><a href="index.html" class="nav-link" onclick="changerCouleur('accueil')">Accueil</a></li>
+                        <li><a href="nos-articles.html" class="nav-link" onclick="changerCouleur('rub1')">Nos Articles</a></li>
+                        <li>Qui sommes nous ?</li>
+                        <li><a href="faq.html" class="nav-link" onclick="changerCouleur('rub3')">FAQ</a></li>
+                        <li>SAV</li>
+                    </ul>
+               
+                </nav>
+            </section>
+        </header>
+
+        <!-- Vos images -->
+        <img src="IMGS/lunette.png" alt="Photo agrandie" data-id="lunette">
+        <img src="IMGS/clef.png" alt="Photo agrandie" data-id="clef">
+        <img src="IMGS/portemonnaie.png" alt="Photo agrandie" data-id="portemonnaie">
+        <img src="IMGS/casque.png" alt="Photo agrandie" data-id="casque">
+        <img src="IMGS/sac-a-dos.png" alt="Photo agrandie" data-id="sac-a-dos">
+
+        <div class="details">
+            <!-- Détails des articles -->
+            <p> description ici</p>
+            <p>Prix : prix ici</p>
+            <button class="add-to-cart" onclick="addToCart('VotreID')">Ajouter au panier</button>
+            
+        </div>
+
+        <script>
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+              
+                var photoId = getParameterByName('id');
+
+              
+                var allImages = document.querySelectorAll('img[data-id]');
+                allImages.forEach(function (image) {
+                    image.style.display = 'none';
+                });
+
+               
+                var selectedImage = document.querySelector('img[data-id="' + photoId + '"]');
+                if (selectedImage) {
+                    selectedImage.style.display = 'block';
+                }
+
+                // Détails des articles
+                var details = {
+                    'lunette': {
+                        description: 'Paire de lunettes avec son boîtier',
+                        prix: '24.99€',
+		
+                    },
+                    'clef': {
+                        description: 'Porte clés',
+                        prix: '16.99€',
+                    },
+                    'portemonnaie': {
+                        description: 'Porte monnaie',
+                        prix: '35.99€',
+                    },
+                    'casque': {
+                        description: 'Casque audio',
+                        prix: '58.99€',
+                    },
+                    'sac-a-dos': {
+                        description: 'Sac à dos',
+                        prix: '42.99€',
+                    }
+                };
+
+              
+              var detailsContainer = document.querySelector('.details');
+    detailsContainer.innerHTML = '<p>' + details[photoId].description + '</p>' +
+        '<p>Prix : ' + details[photoId].prix + '</p>' +
+        '<button class="add-to-cart" onclick="addToCart(\'' + photoId + '\')">Ajouter au panier</button>';
+});
+
+            function addToCart(photoId) {
+                alert('Article ajouté au panier : ' + photoId);
+            }
+        </script>
+    </div>
+    <footer class="background-color">
+        <p class="copyright">&copy; 2024 - Chipfind</p>
+        <a href="https://entreprendre.service-public.fr/vosdroits/F33527" class="CGV">Conditions Générales de Ventes</a>
+        <p>
+            Site réalisé par Kellyane D. et Marwa H.
+        </p>
+<p>Réseau sociaux</p>
+<section class="Icons">
+    <a href="https://www.instagram.com/" target="_blank" class="social-icon">
+        <img src="IMGS/insta.png" alt="insta">
+    </a>
+    <button class="scroll-to-top" onclick="scrollToTop()">↑ Retour en haut</button>
+</section>
+
+ <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>

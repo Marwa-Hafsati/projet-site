@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      
+
+.photo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .photo {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+
+    .description {
+            margin-top: 10px;
+        }
+
+        .police-accueil {
+            font-family: "Anton", sans-serif;
+        }
+         
+ footer {
+    margin-top: 20px; /* Ajustez la valeur selon vos besoins */
+}
+
+      
+
+
+    
+    </style>
+      <script>
+        function redirectToDetails(photoId) {
+            // Redirige vers la nouvelle page avec l'identifiant de la photo
+            window.location.href = 'details.html?id=' + photoId;
+        }
+	 function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0; 
+        }
+    </script>
+    <title>Chipfind</title>
+    <link rel="stylesheet" href="style.css"> <!--si le truc style css est dans un dossier à préciser juste avant-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne">
+     <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <header>
+     <div id="contenu" class="content-margin-top">
+<img src="IMGS/logo.jpg" alt="logo" class="logo-img">
+
+
+    <section class="Haut">
+      <h1> Chipfind</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher...">
+        <button type="button">Rechercher</button>
+    </div>
+      
+
+    </section>
+  <section class="Rubriques">
+            <nav class="NewPage">
+                <ul>
+                    <li><a href="index.html" class="nav-link" onclick="changerCouleur('accueil', this)">Accueil</a></li>
+                    <li><a href="nos-articles.html" class="nav-link" onclick="changerCouleur('rub1', this)">Nos Articles</a></li>
+                    <li><a href="whoRwe.html" class="nav-link" onclick="changerCouleur('rub2', this)">Qui sommes nous ?</a></li>
+                    <li><a href="faq.html" class="nav-link" onclick="changerCouleur('rub3', this)">FAQ</a></li>
+                    <li><a href="SAV.html" class="nav-link" onclick="changerCouleur('rub4', this)">SAV</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+   <div class="background-container">
+    <div class="text-container">
+      
+        <h1 class="police-accueil">Nos Articles</h1>
+        <div class="photo-container">
+            <div class="photo" onclick="redirectToDetails('lunette')">
+                <img src="IMGS/lunette.png" alt="Photo 1">
+                <div class="description">
+                    <p>Paire de lunettes avec son boîtier</p>
+                    <p>Prix : 24.99€</p>
+                </div>
+            </div>
+
+            <div class="photo" onclick="redirectToDetails('clef')">
+                <img src="IMGS/clef.png" alt="Photo 2">
+                <div class="description">
+                    <p>Porte clés</p>
+                    <p>Prix : 16.99€</p>
+                </div>
+            </div>
+
+            <div class="photo" onclick="redirectToDetails('portemonnaie')">
+                <img src="IMGS/portemonnaie.png" alt="Photo 3">
+                <div class="description">
+                    <p>Porte monnaie</p>
+                    <p>Prix : 35.99€</p>
+                </div>
+            </div>
+
+            <div class="photo" onclick="redirectToDetails('casque')">
+                <img src="IMGS/casque.png" alt="Photo 4">
+                <div class="description">
+                    <p>casque audio</p>
+                    <p>Prix : 58.99€</p>
+                </div>
+            </div>
+
+            <div class="photo" onclick="redirectToDetails('sac-a-dos')">
+                <img src="IMGS/sac-a-dos.png" alt="Photo 5">
+                <div class="description">
+                    <p>Sac à dos</p>
+                    <p>Prix : 42.99€</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <footer class="background-color">
+        <p class="copyright">&copy; 2024 - Chipfind</p>
+        <a href="https://entreprendre.service-public.fr/vosdroits/F33527" class="CGV">Conditions Générales de Ventes</a>
+        <p>
+            Site réalisé par Kellyane D. et Marwa H.
+        </p>
+<p>Réseau sociaux</p>
+<section class="Icons">
+    <a href="https://www.instagram.com/" target="_blank">
+ <img src="IMGS/insta.png" alt="insta">
+ <a>
+ <button class="scroll-to-top" onclick="scrollToTop()">↑ Retour en haut</button>
+</div>
+ <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>

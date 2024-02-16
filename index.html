@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .police-accueil {
+            font-family: "Anton", sans-serif;
+        }
+        header {
+            position: fixed;
+            background-color: #d9b08c;
+            z-index: 1000;
+            width: 100%;
+            top: 0;
+        }
+        .content-margin-top {
+            margin-top: 250px; 
+        }
+    </style>
+    <script>
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const diaporama = document.getElementById('diaporama');
+            const slides = document.querySelector('.slides');
+            const slideElements = document.querySelectorAll('.slide');
+            let index = 0;
+
+            function nextSlide() {
+                index = (index + 1) % slideElements.length;
+                updateSlide();
+            }
+
+            function updateSlide() {
+                const translateValue = -index * 100 + '%';
+                slides.style.transform = 'translateX(' + translateValue + ')';
+            }
+
+            setInterval(nextSlide, 3000);
+
+            function changerCouleur(id, elementClique) {
+                var elements = document.querySelectorAll('.nav-link');
+                elements.forEach(function (element) {
+                    element.style.color = '#fff';
+                });
+                elementClique.style.color = 'red';
+            }
+        });
+    </script>
+    <title>Chipfind</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Parisienne">
+</head>
+<body>
+    <header>
+        <section class="LogoSection">
+            <img src="IMGS/logo.jpg" alt="logo" class="logo">
+        </section>
+        <section class="Haut">
+            <h1>Chipfind</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button type="button">Rechercher</button>
+            </div>
+        </section>
+        <section class="Rubriques">
+            <nav class="NewPage">
+                <ul>
+                    <li><a href="index.html" class="nav-link" onclick="changerCouleur('accueil', this)">Accueil</a></li>
+                    <li><a href="nos-articles.html" class="nav-link" onclick="changerCouleur('rub1', this)">Nos Articles</a></li>
+                    <li><a href="whoRwe.html" class="nav-link" onclick="changerCouleur('rub2', this)">Qui sommes nous ?</a></li>
+                    <li><a href="faq.html" class="nav-link" onclick="changerCouleur('rub3', this)">FAQ</a></li>
+                    <li><a href="SAV.html" class="nav-link" onclick="changerCouleur('rub4', this)">SAV</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <div id="contenu" class="content-margin-top">
+        <div class="background-container">
+            <div class="images-container">
+                <div class="conteneur-espace">
+                    <div class="image-and-text">
+                        <img src="IMGS/localisation.png" alt="localisation" class="image-localisation">
+                        <h2>Vous en avez assez de perdre vos objets du quotidien ? Explorez notre vaste gamme d'objets connectés pour retrouver vos objets égarés en un clin d'œil.</h2>
+                        <a href="nos-articles.html" class="bouton-explore">J'explore </a>
+                    </div>
+                </div>
+            </div>
+            <div class="conteneur-espace">
+                <p>Installer notre application Chipfind sur Play Store afin de localiser vos objets !</p>
+                <a href="https://play.google.com/store/games?hl=en&gl=US" target="_blank">
+                    <img src="IMGS/play.png" alt="Play Store" width="100" height="50">
+                </a>
+            </div>
+            <img src="IMGS/solde.png" alt="soldes" class="image-agrandie">
+            <div class="conteneur-espace">
+                <p>Nos propositions</p>
+                <div id="diaporama">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="IMGS/lunette.png" alt="lunette">
+                        </div>
+                        <div class="slide">
+                            <img src="IMGS/clef.png" alt="clef">
+                        </div>
+                        <div class="slide">
+                            <img src="IMGS/portemonnaie.png" alt="portemonnaie">
+                        </div>
+                        <div class="slide">
+                            <img src="IMGS/casque.png" alt="casque audio">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="background-color">
+        <p class="copyright">&copy; 2024 - Chipfind</p>
+        <a href="https://entreprendre.service-public.fr/vosdroits/F33527" class="CGV">Conditions Générales de Ventes</a>
+        <p>Site réalisé par Kellyane D. et Marwa H.</p>
+        <p>Réseau sociaux</p>
+        <section class="Icons">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="IMGS/insta.png" alt="insta">
+            </a>
+        </section>
+        <button class="scroll-to-top" onclick="scrollToTop()">↑ Retour en haut</button>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

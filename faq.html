@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+              font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+ 
+    </style>
+    <title>FAQ</title>
+</head>
+
+<body>
+   
+    <header>
+        <img src="IMGS/logo.jpg" alt="logo" class="logo-img">
+        <section class="Haut">
+            <h1> Chipfind</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button type="button">Rechercher</button>
+            </div>
+        </section>
+         <section class="Rubriques">
+            <nav class="NewPage">
+                <ul>
+                    <li><a href="index.html" class="nav-link" onclick="changerCouleur('accueil', this)">Accueil</a></li>
+                    <li><a href="nos-articles.html" class="nav-link" onclick="changerCouleur('rub1', this)">Nos Articles</a></li>
+                    <li><a href="whoRwe.html" class="nav-link" onclick="changerCouleur('rub2', this)">Qui sommes nous ?</a></li>
+                    <li><a href="faq.html" class="nav-link" onclick="changerCouleur('rub3', this)">FAQ</a></li>
+                    <li><a href="SAV.html" class="nav-link" onclick="changerCouleur('rub4', this)">SAV</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+   
+    <div class="faq-container">
+        <h2>Foire aux questions</h2>
+
+        <div class="accordion">
+            <button class="question">Qu'est-ce que Chipfind ?</button>
+            <div class="answer">
+                <p>Chipfind est une plateforme en ligne qui propose des objets localisables, offrant une solution pratique pour éviter la perte d'articles du quotidien. Bien que conçue initialement pour répondre aux besoins des personnes atteintes de la maladie d'Alzheimer, notre plateforme s'adresse également à toute personne susceptible de perdre fréquemment ses affaires en raison de distractions ou d'oublis. Nos produits visent à simplifier la vie quotidienne en offrant des solutions innovantes pour retrouver facilement et rapidement ses biens égarés.</p>
+            </div>
+
+          <button class="question">Comment puis-je localiser mon objet Chipfind ?</button>
+<div class="answer">
+    <p>Vous pouvez localiser votre objet en installant l'application Chipfind depuis le Play Store.</p>
+</div>
+
+<button class="question">Est-ce que ces objets peuvent également être dédiés aux enfants ?</button>
+<div class="answer">
+    <p>Bien sûr, les objets Chipfind peuvent être dédiés aux adultes comme aux enfants.</p>
+</div>
+
+<button class="question">Si je rencontre un problème technique, est-ce que je pourrai me faire rembourser ?</button>
+<div class="answer">
+    <p>En cas de problème technique, veuillez contacter le Service Après-Vente, disponible dans la rubrique SAV, afin de vérifier si vous pouvez bénéficier d'un remboursement, d'un échange ou d'une autre solution.</p>
+</div>
+
+        </div>
+    </div>
+
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var accordions = document.querySelectorAll('.accordion');
+
+        accordions.forEach(function (accordion) {
+            accordion.addEventListener('click', function (event) {
+                if (event.target.classList.contains('question')) {
+                    var answer = event.target.nextElementSibling;
+
+                    accordions.forEach(function (acc) {
+                        var answers = acc.querySelectorAll('.answer');
+                        answers.forEach(function (ans) {
+                            if (ans !== answer) {
+                                ans.style.display = 'none';
+                                ans.previousElementSibling.classList.remove('active');
+                            }
+                        });
+                    });
+
+                    answer.style.display = (answer.style.display === 'block') ? 'none' : 'block';
+                    event.target.classList.toggle('active', answer.style.display === 'block');
+                }
+            });
+        });
+    });
+    </script>
+    <footer class="background-color">
+        <p class="copyright">&copy; 2024 - Chipfind</p>
+        <a href="https://entreprendre.service-public.fr/vosdroits/F33527" class="CGV">Conditions Générales de Ventes</a>
+        <p>
+            Site réalisé par Kellyane D. et Marwa H.
+        </p>
+<p>Réseau sociaux</p>
+<section class="Icons">
+    <a href="https://www.instagram.com/" target="_blank">
+ <img src="IMGS/insta.png" alt="insta">
+ <a>
+ <button class="scroll-to-top" onclick="scrollToTop()">↑ Retour en haut</button>
+</div>
+ <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>

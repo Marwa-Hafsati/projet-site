@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SAV.css">
+    <script src="SAV.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+    <header>
+        <section class="LogoSection">
+            <img src="IMGS/logo.jpg" alt="logo" class="logo">
+        </section>
+        <section class="Haut">
+            <h1>Chipfind</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button type="button">Rechercher</button>
+            </div>
+        </section>
+        <section class="Rubriques">
+            <nav class="NewPage">
+                <ul>
+                    <li><a href="index.html" class="nav-link" onclick="changerCouleur('accueil', this)">Accueil</a></li>
+                    <li><a href="nos-articles.html" class="nav-link" onclick="changerCouleur('rub1', this)">Nos Articles</a></li>
+                    <li><a href="whoRwe.html" class="nav-link" onclick="changerCouleur('rub2', this)">Qui sommes nous ?</a></li>
+                    <li><a href="faq.html" class="nav-link" onclick="changerCouleur('rub3', this)">FAQ</a></li>
+                    <li><a href="SAV.html" class="nav-link" onclick="changerCouleur('rub4', this)">SAV</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <form onsubmit="sendEmail(); reset(); return false">
+        <h2> Près de vous !</h2>
+        <hr>
+
+        <div class="identite">
+        <label for="Nom" class="Nom">Nom :</label>
+        <input type="text" id="Nom" name="Nom" placeholder="ex : Monnerat"> 
+
+        <label for="Prénom" class="Prénom">Prénom :</label>
+        <input type="text" id="Prénom" name="Prénom" placeholder="ex : Denis"> 
+        </div>
+
+
+        <label for="mail" class="mail">Votre e-mail :</label>
+        <input type="email" id="mail" name="mail" placeholder="ex : monnerat@u-pec.fr">
+
+        <h5> Vous êtes ?</h5>
+        <div class="genre">
+
+        <input type="radio" id="F" name="F" value="Femme">
+        <label>Une femme</label> 
+        <input type="radio" id="H" name="H" value="Homme">
+        <label>Un Homme</label>
+        <input type="radio" id="NB" name="NB" value="Non-Binaire">
+        <label>Privé :D</label>
+    </div>
+
+        <h5> Pourquoi nous contactez-vous ?</h5>
+        <select name="Plus" id="Plus">
+            <option value="Livraison">La livraison</option>
+            <option value="Garantie">La garantie</option>
+            <option value="Suivi">Suivi de commande</option>
+            <option value="Retour">*Retour</option>
+        </select>
+
+        <p>*La politique retour est stricte. Nous vous renverrons un autre article uniquement
+            si notre équipe le trouve défectueux. Dans le cas contraire nous vous rembourserons et
+            vous pourrez (ou non) racheter un article.</p>
+    <div class="parler">
+        <textarea cols="30" rows="30" placeholder="Avez vous des questions ou remarques ?"></textarea>
+    </div>
+    <hr>
+        <button type="submit"> Envoyez !</button>
+    </form>
+</body>
+</html>
+    
