@@ -1,5 +1,5 @@
 /* importation (font, icones, ect..) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 /* fin place import*/
 
 
@@ -14,12 +14,59 @@ body {
    background-color: #ffffff ;
 }
 
+h1 {
+    font-family: 'Parisienne', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    margin-right: 430px;
+    margin-left: 700px;
+}
 /* Equipe changement */
 header {
     background-color: #d9b08c;
+   
+}
+body:hover .scroll-to-top {
+    display: block;
+}
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.search-bar {
+    
+    display: flex;
+    align-items: center;
 }
 
+.search-bar input {
+    padding: 5px;
+    margin-right:5px;
+}
 
+.search-bar button {
+    
+    padding: 8px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+
+    background-color: #d9b08c;
+}
 nav.NewPage {
     display: flex;
     list-style: none;
@@ -70,9 +117,7 @@ li {
    margin: 2rem 0;
 }
 
-h1 {
-    font-family: 'Roboto', sans-serif;
-}
+
 
 .kellyane {
    width: 90%;
